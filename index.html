@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HELENA'S WEB</title>
+    <link href="objects/css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        /*$(document).ready*/
+        /*document.getElementById('XXX').addEventListener('click', function () { });*/
+        $(function () {
+            $('#aAbo').click(function () {
+                scrollAndHide('#divAbout');
+            });
+            $('#aBac').click(function () {
+                scrollAndHide('#divBack');
+            });
+            $('#aSki').click(function () {
+                scrollAndHide('#divSkills');
+            });
+            $('#aWor').click(function () {
+                scrollAndHide('#divWorks');
+            });
+
+            $('#aCon').click(function () {
+                scrollAndHide('#divContac');
+            });
+
+            $(window).resize(function () {
+                /* matchMedia->$(window).width() not the same as media query solution */
+                if (window.matchMedia("(min-width: 769px)").matches) {
+                    /* the viewport is at least 769 pixels wide */
+                    $('#navBtn').removeClass('on');
+                    document.getElementById('navBtn').innerHTML = '<i class="fas fa-bars"></i>';
+                    $('nav').show();
+                }
+                else {
+                    if (!$('#navBtn').hasClass('on'))
+                        $('nav').hide();
+                }
+            })
+
+            $('#navBtn').click(function () {
+                $('#navBtn').toggleClass('on');
+                if ($('#navBtn').hasClass('on')) {
+                    //$('nav').show();
+                    //document.getElementById('navBtn').innerHTML = '<i class="fas fa-times"></i>';
+                    $('#navBtn').html('<i class="fas fa-times"></i>');
+                }
+                else {
+                    //$('nav').hide();
+                    //document.getElementById('navBtn').innerHTML = '<i class="fas fa-bars"></i>';
+                    $('#navBtn').html('<i class="fas fa-bars"></i>');
+                }
+                $('nav').css('display', ($('#navBtn').hasClass('on') ? 'block' : 'none'));
+            });
+
+            $('#workLink').click(function () {
+                $('#mainPage').fadeOut(500);
+                $('#workPage').fadeIn(500);
+                if ($('#navBtn').css.display != 'none') {
+                    $('#navBtn').removeClass('on').html('<i class="fas fa-bars"></i>');;
+                    $('nav').css('display', ($('#navBtn').hasClass('on') ? 'block' : 'none'));
+                }
+                if ($(window).width() >= 769) {
+                    $('nav').css('display', 'block');
+                }
+                $('#aWor').addClass('focus');
+                //$('#mainPage').addClass('leftOut');
+                // for (i = 0; i < 800; i++) { document.getElementById('mainPage').setAttribute('offset-end', i) };
+            });
+
+            $('#workBackBtn').click(function () {
+                $('#mainPage').fadeIn(500);
+                $('#workPage').fadeOut(500);
+                $('#navBtn').removeClass('on').html('<i class="fas fa-bars"></i>');
+                if ($('#navBtn').css.display != 'none') {
+                    $('nav').css('display', ($('#navBtn').hasClass('on') ? 'block' : 'none'));
+                }
+                if ($(window).width() >= 769) {
+                    $('nav').css('display', 'block');
+                }
+                $('#aWor').removeClass('focus');
+                //$('#mainPage').addClass('leftOut');
+                // for (i = 0; i < 800; i++) { document.getElementById('mainPage').setAttribute('offset-end', i) };
+            });
+        })
+    </script>
+    <script>
+        function scrollAndHide(scrollTopElem) {
+            if ($('#mainPage').css('display') == 'none') {
+                $('#mainPage').fadeIn(500);
+                $('#workPage').fadeOut(500);
+                $('#aWor').removeClass('focus');
+            }
+            if ($('#navBtn').hasClass('on')) {
+                $('#navBtn').removeClass('on').html('<i class="fas fa-bars"></i>');
+                $('nav').css('display', ($('#navBtn').hasClass('on') ? 'block' : 'none'));
+            }
+            $('html,body').animate({ scrollTop: $(scrollTopElem).offset().top }, 800);
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="header_container">
+            <div id="navBtn"><i class="fas fa-bars"></i></div>
+            <nav>
+                <div id="navList">
+                    <ul>
+                        <li>
+                            <a id='aAbo'>ABOUT ME</a>
+                        </li>
+                        <li>
+                            <a id='aBac'>
+                                BACKGROUND<br>
+                                &<br>
+                                EXPERIENCE </a>
+                        </li>
+                        <li>
+                            <a id='aSki'>SKILLS</a>
+                        </li>
+                        <li>
+                            <a id='aWor'>WORKS</a>
+                        </li>
+                        <li>
+                            <a id='aCon'>CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div id="mainPage">
+        <!--關於我-->
+        <div class="banner" id="divAbout">
+            <div class="content">
+                <div class="image_block">
+                    <img src="objects/images/banner_main_01.jpg">
+                </div>
+                <div class="text_block">
+                    <h3><i class="fas fa-mask"></i>&nbsp關於我</h3>
+                    <hr class="style-hr">
+                    <p>嗨，我是HELENA，一名軟體工程師，新奇和有趣的東西是生活必需品。</p>
+
+                </div>
+            </div>
+        </div>
+
+        <!--背景與工作經驗-->
+        <div class="banner" id="divBack">
+            <div class="content">
+                <div class="image_block">
+                    <img src="objects/images/banner_main_02.jpg">
+                </div>
+                <div class="text_block">
+                    <h3><i class="fas fa-graduation-cap"></i>&nbsp背景與工作經驗</h3>
+                    <hr class="style-hr">
+                    <p>長庚資管系碩士畢業，在學期間擔任校園記者，以及架設"長庚大學邁向頂尖大學計畫"網頁。</p>
+                    <p> 畢業後任職於SOGO百貨(2013~2018)，擔任資訊開發工程師，負責公司內部系統開發與維護。</p>
+                </div>
+            </div>
+        </div>
+        <!--技能-->
+        <div class="banner" id="divSkills">
+            <div class="content">
+                <div class="image_block">
+                    <img src="objects/images/banner_main_03.jpg">
+                </div>
+                <div class="text_block">
+                    <h3><i class="fas fa-laptop-code"></i>&nbsp技能</h3>
+                    <hr class="style-hr">
+                    <ul>
+                        <li>
+                            <span> RWD design (by pure CSS or framework like Bootstrap or PrimeFaces).</span>
+                        </li>
+                        <li>
+                            <!--動態網頁以及SPA實現-->
+                            <span> Dynamic webpage and SPA set up (by ajax).</span>
+                        </li>
+                        <li>
+                            <!--第三方api介接-->
+                            <span> third-party APIs use e.g.,Google Maps API).</span>
+                        </li>
+                        <li>
+                            <!--JavaWeb開發經驗-->
+                            <span> JavaWeb development experience (e.g.,SOGO system web).</span>
+                            <ul class="sec_ul">
+                                <li>
+                                    <!--JavaWeb前後端串接經驗(by jsf對xml和javaBean進行串接)-->
+                                    <span> JavaWeb front and back end concatenation experience (by jsf).</span>
+                                </li>
+                                <li>
+                                    <!--Object relational mapping(by Spring Hibernate)-->
+                                    <span> ORM (by Spring Hibernate).</span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span> Basic management of relational databases (by SQL).</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--作品-->
+        <div class="banner" id="divWorks">
+            <div class="content">
+                <div class="image_block">
+                    <img src="objects/images/banner_main_04.jpg">
+                </div>
+                <div class="text_block">
+                    <h3><i class="fas fa-palette"></i></i>&nbsp作品</h3>
+                    <hr class="style-hr">
+                    <p> 一幅畫，一段程式...創作一點小東西就可以很滿足。</p>
+                    <!--<p> 你可以像貓一樣貪睡，但別忘了貓的好奇與冒險精神</p>-->
+                    <a id="workLink" class="linkAble"> <i class="fas fa-hand-point-right"></i> 歡迎來到我的小世界</a>
+                </div>
+            </div>
+        </div>
+
+        <!--聯絡方式-->
+        <div class="banner" id="divContac">
+            <div class="content">
+                <div class="image_block">
+                    <img src="objects/images/banner_main_05.jpg">
+                </div>
+                <div class="text_block">
+                    <h3><i class="fas fa-dove"></i>&nbsp聯絡方式</h3>
+                    <hr class="style-hr">
+                    <p>
+                        e-mile: <a class="linkAble" href="mailto:helenauw@gmail.com.tw"><i class="fas fa-hand-point-right"></i>helenauw@gmail.com.tw</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--works's page-->
+    <div id="workPage" style="display:none;">
+        <span id="workBackBtn"><i class="fas fa-angle-left"></i></span>
+
+        <div class="work_content">
+            <div class="work_text_block">
+                <h3>SOGO system web</h3>
+                <hr class="style-hr">
+                <p> 工作時的各項project，禮券沖銷、工務物料、電子商務輔助、遠東SOGO核心...等系統，偶爾支援開發春酒抽獎、客戶投票...等應用系統，因主要為公司內部使用故不適合展示，靜靜的留在腦海深處。</p>
+            </div>
+            <div class="work_image_block">
+                <img src="objects/images/work_01_1.jpg">
+                <img src="objects/images/work_01_2.jpg">
+            </div>
+        </div>
+
+        <div class="work_content">
+            <div class="work_text_block">
+                <h3>長庚大學邁向頂尖大學計畫</h3>
+                <hr class="style-hr">
+                <p> 學生時代幫學校架設的入口網站，網站現在看來青澀，然而能在母校留下一個能展示學校美好一面的網站，是很棒的經歷。</p>
+                <p>
+                    <a class="linkAble" href="http://top.cgu.edu.tw/"><i class="fas fa-hand-point-right"></i>長庚大學邁向頂尖大學計畫</a>
+                </p>
+            </div>
+            <div class="work_image_block">
+                <img src="objects/images/work_02.jpg">
+            </div>
+        </div>
+
+        <div class="work_content">
+            <div class="work_text_block">
+                <h3>Android APP:BMI計算</h3>
+                <hr class="style-hr">
+                <p> 以java試寫的一個簡易安卓應用程式，可輸入資料計算BMI，project卡住時的一個休閒產物。</p>
+                <p>
+                    <a class="linkAble" href="src_donload/BMI.apk" download="BMI"><i class="fas fa-hand-point-right"></i>.apk下載</a>
+                </p>
+            </div>
+            <div class="work_image_block">
+                <img src="objects/images/work_03.jpg">
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+    <footer></footer>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+@charset "utf-8";
+@import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css);
+/*@import url(notosanstc.css);*/
+/*font-family:'Noto Sans TC'___思源黑體*/
+
+html{ position:relative; min-height:100%;}
+html,body{ font-family:'Noto Sans TC','微軟正黑體','Microsoft JhengHei',sans-serif; }
+header{min-height:3em;background-color: darkslategrey;}
+footer{height:2em;background-color: darkslategrey;}
+
+*{margin:0; padding:0; box-sizing:border-box}
+html{ -ms-text-size-adjust:100%;-moz-text-size-adjust:100%; -webkit-text-size-adjust:100%; font-size:10px; }
+/*text-size-adjust___iPhone默認設定-webkit-text-size-adjust: auto，就算viewport設置了maximum-scale=1.0文字還是會放大___
+設成none或100%防止堅屏轉向橫屏時放大文字!*/
+body{ margin:0; font-size:1.6rem; -webkit-overflow-scrolling:touch; text-align:center; background-color:#fff; }
+/* -webkit-overflow-scrolling:touch___當手指從觸摸屏上移開，內容會繼續保持一段時間的滾動效果。 */
+a{ background:transparent; text-decoration:none; color:inherit; cursor:pointer; line-height:1em; display:inline-block;}
+img{ border:0; vertical-align:middle; line-height:0; font-size:0; }
+h1,h2,h3,h4,h5,h6,p,form{ margin:0; font-weight:normal; line-height:1.2em;}
+.header_container nav ul{align-items: center; display:flex;flex-direction:row;list-style: none; }
+.header_container nav li{padding: 0 2rem;}
+
+.header_container {position: relative; }
+.banner .content{ display:flex; align-items:center; }
+.banner .image_block img{ width:100%; }
+
+.on {padding: 5px};
+
+.banner .text_block {display:flex; flex-direction:column;align-items:center;}
+p{text-align:left;margin: 10px}
+
+/*.banner hr{ border:none; border-bottom:solid 1px #f9ffdf; margin:1rem 0;}*/
+/*在HTML 4.01中，所有的佈局屬性都已廢棄 。 在HTML5 中不再支持這些屬性*/
+
+
+hr.style-hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    width:100%;
+}
+
+nav {background-color: darkslategrey;color:white;;padding: 0.3em 2em;}
+ul {justify-content:center;}
+#navBtn {font-size: 1.5em; color: Tomato;position: absolute;right: 2em;padding: 5px}
+
+.work_content{display:flex; flex-direction:row;padding: 0.3em 2em;}
+.work_image_block{ width:50%; }
+.work_text_block{width:50%;padding:0 7% 0 3%;}
+#workBackBtn{position: fixed;top:50px;left: 2px;color: Tomato;font-size:50px}
+
+.linkAble{color: indianred;}
+
+
+.sec_ul{margin-left : 3rem;}
+.text_block li:nth-of-type(even){background-color: #DDAAAA;} 
+.text_block li{text-align: left;font-size:1.5rem;}
+
+#workPage .work_content img{border-radius: 10% 30% 10% 30% ;width: 50%;margin: 1rem;border-style: solid;border-width: 1.5px;border-color: darkgreen;}
+#workPage p{text-align:left;}
+#workPage .work_content{display:flex; align-items:center;border-style: solid;border-width: 0 0 1.5px 0;border-color:rgba(50,100,50,0.3);}
+.focus{color: gold;}
+
+/*S*/
+@media (max-width:769px){
+    h3{ font-size:2rem;}
+    p{ font-size:1.5rem;}
+
+    .banner .content{flex-direction:column;padding:0;}
+    .banner .text_block{padding:1.5rem 2rem ; min-height :150px;}
+
+    /*MENU--------------*/
+    nav {display: none;}
+    .header_container nav ul{ flex-direction:column;list-style: none;align-items:flex-start;}
+    .header_container nav ul li{padding: 0.5em 0;}
+    .header_container nav ul li a{text-align:left;padding: 0 0 0 2.5em;}
+    #navBtn {display: block; }
+    #workPage .work_content img{width: 70%;}
+    #workPage .work_image_block {width: 100%;}
+    #workPage .work_text_block{width: 100%;}
+    #workPage .work_text_block h3{margin:12px 0 0 0;}
+    #workPage .work_content{flex-direction:column;}
+}
+
+/*B*/
+@media (min-width:769px){
+    #mainPage{ max-width:1320px;}
+    h3{ font-size:2.2rem;}
+    p{font-size:1.5rem;line-height:2rem}
+
+/*偶數行逆排序*/
+    .banner:nth-of-type(even) .content{flex-direction:row-reverse;}
+    .banner .content{flex-direction:row;padding:0;}
+    .banner .image_block{ width:calc(100%*7/12); }
+    .banner .text_block{width:calc(100%*5/12);padding:0 7% 0 3%;}
+    #navBtn {display: none;}
+}
+
+
+
+.leftOut {animation: leftOutAni 10s ease 1}
+@keyframes leftOutAni{
+    from{background-color:RED;}
+    to{background-color:blue;}
+}
