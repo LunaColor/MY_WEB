@@ -32,62 +32,37 @@
             });
 
             $(window).resize(function () {
-                /* matchMedia->$(window).width() not the same as media query solution */
-                if (window.matchMedia("(min-width: 769px)").matches) {
-                    /* the viewport is at least 769 pixels wide */
-                    $('#navBtn').removeClass('on');
-                    document.getElementById('navBtn').innerHTML = '<i class="fas fa-bars"></i>';
-                    $('nav').show();
-                }
-                else {
-                    if (!$('#navBtn').hasClass('on'))
-                        $('nav').hide();
-                }
+                /* matchMedia->$(window).width() not the same as media query solution!
+                solution: if (window.matchMedia("(min-width: 769px)").matches){}!
+                --->the viewport is at least 769 pixels wide!*/
+                resetHeader();
             })
 
             $('#navBtn').click(function () {
+                console.log($('#navBtn').hasClass('on'));
+
                 $('#navBtn').toggleClass('on');
-                if ($('#navBtn').hasClass('on')) {
-                    //$('nav').show();
-                    //document.getElementById('navBtn').innerHTML = '<i class="fas fa-times"></i>';
-                    $('#navBtn').html('<i class="fas fa-times"></i>');
-                }
-                else {
-                    //$('nav').hide();
-                    //document.getElementById('navBtn').innerHTML = '<i class="fas fa-bars"></i>';
-                    $('#navBtn').html('<i class="fas fa-bars"></i>');
-                }
-                $('nav').css('display', ($('#navBtn').hasClass('on') ? 'block' : 'none'));
+                console.log($('#navBtn').hasClass('on'));
+                resetHeader();
             });
 
             $('#workLink').click(function () {
                 $('#mainPage').fadeOut(500);
                 $('#workPage').fadeIn(500);
                 if ($('#navBtn').css.display != 'none') {
-                    $('#navBtn').removeClass('on').html('<i class="fas fa-bars"></i>');;
-                    $('nav').css('display', ($('#navBtn').hasClass('on') ? 'block' : 'none'));
-                }
-                if ($(window).width() >= 769) {
-                    $('nav').css('display', 'block');
+                    $('#navBtn').removeClass('on')
                 }
                 $('#aWor').addClass('focus');
-                //$('#mainPage').addClass('leftOut');
-                // for (i = 0; i < 800; i++) { document.getElementById('mainPage').setAttribute('offset-end', i) };
+                resetHeader();
+                $('html,body').animate({ scrollTop: 0 }, 800);
             });
 
             $('#workBackBtn').click(function () {
                 $('#mainPage').fadeIn(500);
                 $('#workPage').fadeOut(500);
-                $('#navBtn').removeClass('on').html('<i class="fas fa-bars"></i>');
-                if ($('#navBtn').css.display != 'none') {
-                    $('nav').css('display', ($('#navBtn').hasClass('on') ? 'block' : 'none'));
-                }
-                if ($(window).width() >= 769) {
-                    $('nav').css('display', 'block');
-                }
+                $('#navBtn').removeClass('on');
                 $('#aWor').removeClass('focus');
-                //$('#mainPage').addClass('leftOut');
-                // for (i = 0; i < 800; i++) { document.getElementById('mainPage').setAttribute('offset-end', i) };
+                resetHeader();
             });
         })
     </script>
@@ -104,11 +79,42 @@
             }
             $('html,body').animate({ scrollTop: $(scrollTopElem).offset().top }, 800);
         }
+
+        function resetHeader() {
+            /*大螢幕*/
+            if ($('#windowSizeStatus').css('display') == 'block') {
+                $('nav').css('display', 'block');
+                $('#navBtn').removeClass('on');
+                console.log('B');
+            }
+            /*小螢幕*/
+            else {
+                console.log('S');
+
+                //$('nav').css('display', ($('#navBtn').hasClass('on') ? 'block' : 'none'));
+                if ($('#navBtn').hasClass('on')) {
+                    $('nav').css('display', 'block');
+                    //document.getElementById('navBtn').innerHTML = '<i class="fas fa-times"></i>';
+                    $('#navBtn').html('<i class="fas fa-times"></i>');
+                    console.log('on');
+                }
+                else {
+                    //document.getElementById('navBtn').innerHTML = '<i class="fas fa-bars"></i>';
+                    $('#navBtn').html('<i class="fas fa-bars"></i>');
+                    $('nav').css('display', 'none');
+                    console.log('off');
+
+                }
+            }
+
+        }
     </script>
 </head>
 
 <body>
     <header>
+        <div id="windowSizeStatus"></div>
+        <!--源於CSS和jQuery判讀長度有誤差，only for resetHeader() check,display:'block' is Big, 'none' is small-->
         <div class="header_container">
             <div id="navBtn"><i class="fas fa-bars"></i></div>
             <nav>
@@ -178,27 +184,28 @@
                     <hr class="style-hr">
                     <ul>
                         <li>
-                            <span> RWD design (by pure CSS or framework like Bootstrap or PrimeFaces).</span>
+                            <!--RWD design (by pure CSS or framework like Bootstrap or PrimeFaces).-->
+                            <span> RWD design.</span>
                         </li>
                         <li>
-                            <!--動態網頁以及SPA實現-->
-                            <span> Dynamic webpage and SPA set up (by ajax).</span>
+                            <!--動態網頁以及SPA實現(by ajax)-->
+                            <span> Dynamic webpage and SPA set up.</span>
                         </li>
                         <li>
-                            <!--第三方api介接-->
-                            <span> third-party APIs use e.g.,Google Maps API).</span>
+                            <!--第三方api介接(e.g.,Google Maps API)-->
+                            <span> third-party APIs use.</span>
                         </li>
                         <li>
-                            <!--JavaWeb開發經驗-->
-                            <span> JavaWeb development experience (e.g.,SOGO system web).</span>
+                            <!--JavaWeb開發經驗(e.g.,SOGO system web)-->
+                            <span> JavaWeb development experience.</span>
                             <ul class="sec_ul">
                                 <li>
                                     <!--JavaWeb前後端串接經驗(by jsf對xml和javaBean進行串接)-->
-                                    <span> JavaWeb front and back end concatenation experience (by jsf).</span>
+                                    <span> JavaWeb front and back end connecting experience.</span>
                                 </li>
                                 <li>
                                     <!--Object relational mapping(by Spring Hibernate)-->
-                                    <span> ORM (by Spring Hibernate).</span>
+                                    <span> Object relational mapping.</span>
                                 </li>
                             </ul>
                         </li>
