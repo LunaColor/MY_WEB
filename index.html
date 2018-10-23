@@ -79,7 +79,6 @@
             }
             $('html,body').animate({ scrollTop: $(scrollTopElem).offset().top }, 800);
         }
-
         function resetHeader() {
             /*大螢幕*/
             if ($('#windowSizeStatus').css('display') == 'block') {
@@ -103,10 +102,8 @@
                     $('#navBtn').html('<i class="fas fa-bars"></i>');
                     $('nav').css('display', 'none');
                     console.log('off');
-
                 }
             }
-
         }
     </script>
 </head>
@@ -151,14 +148,13 @@
                     <img src="objects/images/banner_main_01.jpg">
                 </div>
                 <div class="text_block">
-                    <h3><i class="fas fa-mask"></i>&nbsp關於我</h3>
+                    <h3><i class="fas fa-mask"></i>&nbsp&nbsp關於我</h3>
                     <hr class="style-hr">
                     <p>嗨，我是HELENA，一名軟體工程師，新奇和有趣的東西是生活必需品。</p>
 
                 </div>
             </div>
         </div>
-
         <!--背景與工作經驗-->
         <div class="banner" id="divBack">
             <div class="content">
@@ -166,7 +162,7 @@
                     <img src="objects/images/banner_main_02.jpg">
                 </div>
                 <div class="text_block">
-                    <h3><i class="fas fa-graduation-cap"></i>&nbsp背景與工作經驗</h3>
+                    <h3><i class="fas fa-graduation-cap"></i>&nbsp&nbsp背景與工作經驗</h3>
                     <hr class="style-hr">
                     <p>長庚資管系碩士畢業，在學期間擔任校園記者，以及架設"長庚大學邁向頂尖大學計畫"網頁。</p>
                     <p> 畢業後任職於SOGO百貨(2013~2018)，擔任資訊開發工程師，負責公司內部系統開發與維護。</p>
@@ -180,43 +176,43 @@
                     <img src="objects/images/banner_main_03.jpg">
                 </div>
                 <div class="text_block">
-                    <h3><i class="fas fa-laptop-code"></i>&nbsp技能</h3>
+                    <h3><i class="fas fa-laptop-code"></i>&nbsp&nbsp技能</h3>
                     <hr class="style-hr">
                     <ul>
                         <li>
                             <!--RWD design (by pure CSS or framework like Bootstrap or PrimeFaces).-->
-                            <span> RWD design.</span>
+                            <span>RWD design.</span>
                         </li>
                         <li>
                             <!--動態網頁以及SPA實現(by ajax)-->
-                            <span> Dynamic webpage and SPA set up.</span>
+                            <span>Dynamic web page and SPA set up.</span>
                         </li>
                         <li>
                             <!--第三方api介接(e.g.,Google Maps API)-->
-                            <span> third-party APIs use.</span>
+                            <span>Third-party APIs use.</span>
                         </li>
                         <li>
-                            <!--JavaWeb開發經驗(e.g.,SOGO system web)-->
-                            <span> JavaWeb development experience.</span>
+                            <!--Java web開發經驗(e.g.,SOGO system web)-->
+                            <span>Java web development experience.</span>
                             <ul class="sec_ul">
                                 <li>
-                                    <!--JavaWeb前後端串接經驗(by jsf對xml和javaBean進行串接)-->
-                                    <span> JavaWeb front and back end connecting experience.</span>
+                                    <!--Java web前後端串接經驗(by jsf對xml和javaBean進行串接)-->
+                                    <span>Front and back end connecting experience.</span>
                                 </li>
                                 <li>
                                     <!--Object relational mapping(by Spring Hibernate)-->
-                                    <span> Object relational mapping.</span>
+                                    <span>Object relational mapping.</span>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <span> Basic management of relational databases (by SQL).</span>
+                            <!--Basic management of relational database (by SQL).-->
+                            <span>Basic management of relational database.</span>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-
         <!--作品-->
         <div class="banner" id="divWorks">
             <div class="content">
@@ -224,15 +220,14 @@
                     <img src="objects/images/banner_main_04.jpg">
                 </div>
                 <div class="text_block">
-                    <h3><i class="fas fa-palette"></i></i>&nbsp作品</h3>
+                    <h3><i class="fas fa-palette"></i></i>&nbsp&nbsp作品</h3>
                     <hr class="style-hr">
-                    <p> 一幅畫，一段程式...創作一點小東西就可以很滿足。</p>
-                    <!--<p> 你可以像貓一樣貪睡，但別忘了貓的好奇與冒險精神</p>-->
+                    <p> 一幅畫、一段程式...創作一點小東西就可以很滿足。</p>
+                    <!--你可以像貓一樣貪睡，但別忘了貓的好奇與冒險精神-->
                     <a id="workLink" class="linkAble"> <i class="fas fa-hand-point-right"></i> 歡迎來到我的小世界</a>
                 </div>
             </div>
         </div>
-
         <!--聯絡方式-->
         <div class="banner" id="divContac">
             <div class="content">
@@ -240,7 +235,7 @@
                     <img src="objects/images/banner_main_05.jpg">
                 </div>
                 <div class="text_block">
-                    <h3><i class="fas fa-dove"></i>&nbsp聯絡方式</h3>
+                    <h3><i class="fas fa-dove"></i>&nbsp&nbsp聯絡方式</h3>
                     <hr class="style-hr">
                     <p>
                         e-mile: <a class="linkAble" href="mailto:helenauw@gmail.com.tw"><i class="fas fa-hand-point-right"></i>helenauw@gmail.com.tw</a>
@@ -252,24 +247,24 @@
     <!--works's page-->
     <div id="workPage" style="display:none;">
         <span id="workBackBtn"><i class="fas fa-angle-left"></i></span>
-
+        <!--SOGO system web-->
         <div class="work_content">
             <div class="work_text_block">
                 <h3>SOGO system web</h3>
                 <hr class="style-hr">
-                <p> 工作時的各項project，禮券沖銷、工務物料、電子商務輔助、遠東SOGO核心...等系統，偶爾支援開發春酒抽獎、客戶投票...等應用系統，因主要為公司內部使用故不適合展示，靜靜的留在腦海深處。</p>
+                <p>在SOGO任職期間的各項project，含括禮券沖銷、工務物料、電子商務輔助、遠東SOGO核心...等系統，偶爾支援春酒抽獎、客戶投票...等應用系統開發。</p>
             </div>
             <div class="work_image_block">
                 <img src="objects/images/work_01_1.jpg">
                 <img src="objects/images/work_01_2.jpg">
             </div>
         </div>
-
+        <!--長庚大學邁向頂尖大學計畫-->
         <div class="work_content">
             <div class="work_text_block">
-                <h3>長庚大學邁向頂尖大學計畫</h3>
+                <h3>長庚大學邁向頂尖大學計畫網站</h3>
                 <hr class="style-hr">
-                <p> 學生時代幫學校架設的入口網站，網站現在看來青澀，然而能在母校留下一個能展示學校美好一面的網站，是很棒的經歷。</p>
+                <p>學生時代替學校架設的入口網站，完成一個能呈現母校榮光的網站是很棒的經歷。</p>
                 <p>
                     <a class="linkAble" href="http://top.cgu.edu.tw/"><i class="fas fa-hand-point-right"></i>長庚大學邁向頂尖大學計畫</a>
                 </p>
@@ -278,12 +273,12 @@
                 <img src="objects/images/work_02.jpg">
             </div>
         </div>
-
+        <!--Android APP:BMI計算-->
         <div class="work_content">
             <div class="work_text_block">
-                <h3>Android APP:BMI計算</h3>
+                <h3>Android APP : BMI計算</h3>
                 <hr class="style-hr">
-                <p> 以java試寫的一個簡易安卓應用程式，可輸入資料計算BMI，project卡住時的一個休閒產物。</p>
+                <p>一個簡易的安卓應用程式，可輸入資料計算BMI。</p>
                 <p>
                     <a class="linkAble" href="src_donload/BMI.apk" download="BMI"><i class="fas fa-hand-point-right"></i>.apk下載</a>
                 </p>
