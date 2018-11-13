@@ -12,6 +12,7 @@ html,body{ font-family:'Noto Sans TC','微軟正黑體','Microsoft JhengHei',san
 body{ margin:0; font-size:1.6rem; -webkit-overflow-scrolling:touch; text-align:center; background-color:#fff; }
 /* -webkit-overflow-scrolling:touch___當手指從觸摸屏上移開，內容會繼續保持一段時間的滾動效果。 */
 header{min-height:3em;background-color: darkslategrey;}
+#page{display:flex;justify-content:center;}
 footer{height:2em;background-color: darkslategrey;}
 a{ background:transparent; text-decoration:none; color:inherit; cursor:pointer; line-height:1em; display:inline-block;}
 p{text-align:left;margin: 10px}
@@ -75,6 +76,7 @@ ul {justify-content:center;}
 @media (min-width:769px){
     #windowSizeStatus{display: block;}
     #mainPage{ max-width:1320px;}
+    #workPage{ max-width:1320px;}
     #navBtn{display: none;}
     nav{display: block;}
     h3{ font-size:2.2rem;}
